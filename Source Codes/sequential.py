@@ -1,7 +1,6 @@
 from twitter_scraper import get_tweets
 import pandas
 df = pandas.read_csv('sh_username.csv')
-#print(df["screenName"][0])
 
 import sss
 import time
@@ -18,7 +17,6 @@ for i in range(8):
     for tweet in get_tweets(usr, pages=1):
       print(j,end=" ")
       csvstring=usr+','
-      #print("Post:", j,end=" is ")
       post = tweet['text']
       
       csvstring +="\""+post+"\""+','
@@ -27,7 +25,6 @@ for i in range(8):
       csvstring +=str(pn)+'\n'
       #print(pn)
       j=j+1
-      #input()
       list.append(csvstring)
     print("")
   except:
