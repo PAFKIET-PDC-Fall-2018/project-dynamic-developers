@@ -43,3 +43,40 @@ end = my_A[len(my_A)-1]
 uname = users[start:end+1]
 
 
+
+data = []
+sum = 0
+for name in uname:
+  try:
+    temp = senti.scrape(name,1)
+    data.append(temp)
+  except:
+    print("")
+
+i = 0
+print('showing tweets at rank %d' %comm.rank)
+for tweets in data:
+    for tweet in tweets[0]:
+
+        user = ("tweet by: @ %s \n" % (tweets[1]))
+        #print(user)
+        rank= ("Post#: %d and rank#: %d \n" % (i, comm.rank))
+        post = tweet['text']
+        #print(post)
+        analysis = sss.analysis(post)
+        tweetdata.append("%s %s %s \n sentiment ::::::::::::::::  %s \n \n\n\n" %(user,rank,post,analysis))
+        i= i+1
+
+
+print('lenght of %d data at rank %d' % (len(tweetdata),comm.rank))
+comm.barrier()
+if comm.rank == 0:
+    print("---Total Time in %s seconds ---" % (time.time() - start_time))
+for _tweet in tweetdata:
+    f = open(str(comm.rank)+".txt", "a")
+    f.write(_tweet + '\n')
+    # print(_tweet)
+
+
+
+
