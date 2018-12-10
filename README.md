@@ -37,3 +37,4 @@ Steps Required:
 	Perform tokenization in order to get words, which be uni-grams, bi-grams or tri-grams.
 	Distributing either (complete) tweets or words of a tweet on different machines as discussed in Section 1
 	Application of Senti WordNet to find the polarity of a tweet
+
