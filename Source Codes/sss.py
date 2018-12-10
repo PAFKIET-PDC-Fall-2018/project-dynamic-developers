@@ -18,6 +18,7 @@ def analysis(doc): # takes one aurgumentdoc which is the text of tweets in our c
       for idx2, t in enumerate(taggedsent):
         newtag = ''
         lemmatized = wnl.lemmatize(t[0])
+        #checking noun, adjective verb [By Muhammad Ghous 59455]
         if t[1].startswith('NN'):
           newtag = 'n'
         elif t[1].startswith('JJ'):
