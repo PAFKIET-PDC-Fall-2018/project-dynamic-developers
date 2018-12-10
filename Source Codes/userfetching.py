@@ -9,7 +9,7 @@ with open('data.csv') as csv_file:
         ls.append(row[1]+"\n")
 leng=len(ls)
 for i in range(1):
-    with open('username.csv', 'a') as fd:
+    with open('resources/username.csv', 'a') as fd:
         fd.writelines(ls)
         print("remaining", leng-i)
 
