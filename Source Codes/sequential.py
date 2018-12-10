@@ -23,7 +23,7 @@ for i in range(8):
       
       csvstring +="\""+post+"\""+','
       #print(post)
-      pn = sss.analysis(post)
+      pn = sss.analysis(post)#getting polarity from sentiwordnet [By Muhammad Ghous 59455]
       csvstring +=str(pn)+'\n'
       #print(pn)
       j=j+1
