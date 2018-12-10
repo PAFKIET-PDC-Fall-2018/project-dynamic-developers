@@ -33,8 +33,8 @@ This could be done in two different ways:
 
 
 Steps Required:
-	Pre-process the tweets. Pre-processing includes but is not limited to stemming, passing through a stop-list, replacing URLs with a keyword URL, replacing user names etc.
-	Perform tokenization in order to get words, which be uni-grams, bi-grams or tri-grams.
-	Distributing either (complete) tweets or words of a tweet on different machines as discussed in Section 1
-	Application of Senti WordNet to find the polarity of a tweet
+•	Pre-process the tweets. Pre-processing includes but is not limited to stemming, passing through a stop-list, replacing URLs with a keyword URL, replacing user names etc.
+•	Perform tokenization in order to get words, which be uni-grams, bi-grams or tri-grams.
+•	Distributing either (complete) tweets or words of a tweet on different machines as discussed in Section 1
+•	Application of Senti WordNet to find the polarity of a tweet
 
