@@ -17,6 +17,7 @@ for i in range(8):
   try:
     for tweet in get_tweets(usr, pages=1):
       print(j,end=" ")
+      #here we are making csv string which contains username, post, and its polarity giving by the sentiwordnet [By Muhammad Ghous 59455]
       csvstring=usr+','
       post = tweet['text']
       
