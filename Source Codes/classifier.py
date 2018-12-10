@@ -35,3 +35,4 @@ def classify(sentence):
     arr.append('Positive: ' + str( float( pos ) / len( words ) ))
     arr.append('Negative: ' + str( float( neg ) / len( words ) ))
     return arr
+
