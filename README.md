@@ -9,7 +9,6 @@ Name	Student Id	Class Id
 Muhammad Ghous Sarwar	59455	100048
 Tahreem Feroz	59464	100048
 Syed Fasih	60838	100048
-Ismail Javery	60152	
 
 “Project Name: Find Sentiment of Tweet on Cluster”
 
