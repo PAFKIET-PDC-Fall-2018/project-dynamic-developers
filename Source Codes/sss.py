@@ -46,8 +46,8 @@ def analysis(doc): # takes one aurgumentdoc which is the text of tweets in our c
         continue
       sentence_sentiment.append(sum([word_score for word_score in score_sent]) / len(score_sent)) # dividing score of sum of all words by score of sentece [By S M Fasih Ali 60838] 
     if sentence_sentiment[0] > 0.03: # if greater than 0.03 positive [By S M Fasih Ali 60838] 
-      return ("Happy")
+      return ("positive")
     elif sentence_sentiment[0] <-0.03: # if lest than -0.05 negative [By S M Fasih Ali 60838] 
-      return ("sad")
+      return ("negative")
     else:# 
-      return ("Normal") #else neutral [By S M Fasih Ali 60838] 
+      return ("Neutral") #else neutral [By S M Fasih Ali 60838] 
