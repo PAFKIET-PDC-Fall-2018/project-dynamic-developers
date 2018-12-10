@@ -31,5 +31,7 @@ for i in range(8):
   except:
     j=1
 print("---Total Time in %s seconds ---" % (time.time() - start_time))
+
+#here we are creating accuracy.csv file so that we can check our accuracy score [By Muhammad Ghous 59455]
 #with open('accuracy.csv', 'a') as fd:
   #fd.writelines(list)
