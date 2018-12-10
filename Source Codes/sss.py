@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
+
+
 import nltk
 from nltk.corpus import sentiwordnet as swn
 
