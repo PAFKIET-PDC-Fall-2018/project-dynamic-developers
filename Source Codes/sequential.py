@@ -5,7 +5,7 @@ df = pandas.read_csv('sh_username.csv')
 
 import sss
 import time
-start_time = time.time()
+start_time = time.time()#sequential start time [By Muhammad Ghous 59455]
 
 list=[]
 for i in range(8):
@@ -30,6 +30,7 @@ for i in range(8):
     print("")
   except:
     j=1
+# printing total time consumed  [By Muhammad Ghous 59455]
 print("---Total Time in %s seconds ---" % (time.time() - start_time))
 
 #here we are creating accuracy.csv file so that we can check our accuracy score [By Muhammad Ghous 59455]
