@@ -14,7 +14,6 @@ users = []
 
 tweetdata = []
 
-#print('getting user')
 df = pandas.read_csv('sh_username.csv')
 for m in range(len(df)):
     users.append(df["username"][m])
