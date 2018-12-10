@@ -1,5 +1,6 @@
 from twitter_scraper import get_tweets
 import pandas
+#sh_username is  csv file having limited no of users (8) [By Muhammad Ghous 59455]
 df = pandas.read_csv('sh_username.csv')
 
 import sss
