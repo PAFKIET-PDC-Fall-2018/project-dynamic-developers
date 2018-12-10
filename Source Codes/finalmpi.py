@@ -6,7 +6,7 @@ import numpy as np
 from mpi4py import MPI
 import sss # importing sss.py[sentiwordnet] [By S M Fasih Ali 60838] 
 import time
-start_time = time.time()
+start_time = time.time()#start time of program [By Muhammad Ghous 59455]
 # ============ initilization of mpi [By S M Fasih Ali 60838] ======
 comm = MPI.COMM_WORLD
 size = comm.size
@@ -24,7 +24,7 @@ for m in range(len(df)):
 N = len(users)  # no of users [By S M Fasih Ali 60838] 
 my_N = int(N/size) # no of users for each process/machine [By S M Fasih Ali 60838] 
 N= N- N%my_N # for dividing equally [By S M Fasih Ali 60838] 
-if rank == 0: # if base process or server initialize list 
+if rank == 0: # if base process or server initialize list [By Muhammad Ghous 59455] 
     A = np.arange(N, dtype=np.int)
 else:
     A = np.empty(N, dtype=np.int)
@@ -33,7 +33,7 @@ my_A = np.empty(my_N, dtype=np.int)
 
 # Scatter data into my_A arrays
 
-
+#printng scatter when get root process rank [By Muhammad Ghous 59455]
 if comm.rank == 0: 
     print('scattering data at rank %d' % comm.rank)
 comm.Scatter( [A, MPI.INT], [my_A, MPI.INT],root=0 ) #scattering A list [By S M Fasih Ali 60838]  
@@ -46,11 +46,12 @@ uname = users[start:end+1] # users from starting index to ending index for eg. i
 
 data = [] # list for scrape tweets [By S M Fasih Ali 60838] 
 for name in uname: #for scraping tweets [By S M Fasih Ali 60838] 
+  #handling exception so that if we get any username which is not exists our code remains continue [By Muhammad Ghous 59455]
   try:
     temp = senti.scrape(name,1) 
     data.append(temp)
   except:
-    print("")
+    print("username not exist")#[By Muhammad Ghous 59455]
 
 i = 0 # as a counter [By S M Fasih Ali 60838] 
 print('showing tweets at rank %d' %comm.rank)
@@ -68,11 +69,11 @@ for tweets in data:
 
 
 print('lenght of %d data at rank %d' % (len(tweetdata),comm.rank))
-comm.barrier()
-if comm.rank == 0:
+comm.barrier()#process synchronization point [By Muhammad Ghous 59455]
+if comm.rank == 0:#printing total processing time used by all nodes [By Muhammad Ghous 59455]
     print("---Total Time in %s seconds ---" % (time.time() - start_time))
     
-    comm.Allgather( [my_A, MPI.int], [A, MPI.int] )
+    comm.Allgather( [my_A, MPI.int], [A, MPI.int] ) # here all will gathher everyone's processed data [By Muhammad Ghous 59455]
 for _tweet in tweetdata: # saving analysis in text file by [rank].txt [By S M Fasih Ali 60838] 
     f = open(str(comm.rank)+".txt", "a")
     f.write(_tweet + '\n')
